@@ -36,6 +36,7 @@ The following tables lists the configurable parameters of the Portworx chart and
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `deploymentType` | The deployment type. Can be either docker/oci |
 | `imageVersion` | The image tag to pull |
+| `isEssentialsLicense` | Set to true for Essentials Licensing |
 | `openshiftInstall` | Installing on Openshift? |
 | `pksInstall` | Installing on Pivotal Container service? |
 | `EKSInstall` | Installing EKS (Amazon Elastic Container service) |
