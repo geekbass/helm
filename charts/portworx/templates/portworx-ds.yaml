@@ -26,6 +26,7 @@
 {{- $consulToken := .Values.consul.token | default "none" }}
 {{- $etcdEndPoints := .Values.etcdEndPoint }}
 {{- $misc := .Values.misc | default "" | split " " }}
+{{- $isEssentialsLicense := .Values.isEssentialsLicense | default false }}
 
 apiVersion: apps/v1
 kind: DaemonSet
@@ -166,7 +167,12 @@ spec:
                 {{- end }}
               {{ end -}}
 
-              "-x", "kubernetes"
+              "-x", "kubernetes",
+
+             {{- if eq $isEssentialVersion true}}
+              "--oem", "esse"
+             {{- end }}
+
              ]
            {{- end }}
           env:
